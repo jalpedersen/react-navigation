@@ -432,12 +432,12 @@ class CardStack extends Component {
     const SceneComponent = this.props.router.getComponentForRouteName(
       scene.route.routeName
     );
-
+    const { cardStyle } = this._getScreenDetails(scene).options;
     return (
       <Card
         {...this.props}
         key={`card_${scene.key}`}
-        style={[style, this.props.cardStyle]}
+        style={[style, this.props.cardStyle, cardStyle]}
         scene={scene}
       >
         {this._renderInnerScene(SceneComponent, scene)}
